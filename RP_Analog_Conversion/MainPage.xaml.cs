@@ -51,7 +51,7 @@ private async void InGpioPinOnValueChanged(GpioPin sender, GpioPinValueChangedEv
     var temp = (volt - .5)*100;
 
     Debug.WriteLine($"Volt : {volt}  temp : {temp:f2}");
-    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => TheTextBlock.Text = $"Temperature {temp:f2}°C");
+    await Dispatcher.RunAsync(CoreDispatcherPriority.High, () => TheTextBlock.Text = $"Temperature {temp:f2}°C");
 }
 
         private async Task InitializeAsync()
